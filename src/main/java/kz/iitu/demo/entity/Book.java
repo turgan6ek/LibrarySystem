@@ -61,4 +61,15 @@ public class Book {
     public Long getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id:" + id + '\'' +
+                ", name:'" + name + '\'' +
+                ", author:'" + author + '\'' +
+                ", description:'" + description + '\'' +
+                ", isAvailable:" + isAvailable +
+                '}';
+    }
 }

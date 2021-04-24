@@ -8,7 +8,8 @@ public interface IssueService {
     List<Issue> findAll();
     void makeRequest(Issue issue);
     List<Issue> findOverdue();
-    List<Issue> findByID(Long id);
+    Issue findByID(Long id);
+
     void returnBook(Issue issue);
     void acceptRequests();
 }

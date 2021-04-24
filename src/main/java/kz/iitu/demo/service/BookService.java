@@ -10,4 +10,6 @@ public interface BookService {
     void issueBook(Book book);
     void returnBook(Book book);
     void deleteBook(Book book);
+    List<Book> findByInfo(String author, String name, String description);
+    Book getOne(Long id);
 }

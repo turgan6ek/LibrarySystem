@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @Configuration
 @ComponentScan(basePackages = "kz.iitu.demo")
 @PropertySource("application.properties")
-@EnableJpaRepositories(basePackages = "kz.iitu.demo.dao")
+@EnableJpaRepositories(basePackages = "kz.iitu.demo.repository")
 public class SpringConfig {
 }
