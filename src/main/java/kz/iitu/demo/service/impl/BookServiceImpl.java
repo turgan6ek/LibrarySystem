@@ -42,7 +42,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<Book> findByInfo(String author, String name, String description) {
-        return bookRepository.findByParameters(author, name, description);
+        return bookRepository.findByAuthorContainingOrNameContainingOrDescriptionContainingAndIsAvailableTrue(author, name, description);
     }
 
     @Override

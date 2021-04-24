@@ -64,12 +64,11 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
-                "id:" + id + '\'' +
-                ", name:'" + name + '\'' +
-                ", author:'" + author + '\'' +
-                ", description:'" + description + '\'' +
-                ", isAvailable:" + isAvailable +
-                '}';
+        return "--------------- Book ---------------" +
+                "\nid: " + id + '\n' +
+                "name: '" + name + '\n' +
+                "author: '" + author + '\n' +
+                "description: '" + description + '\n' +
+                "isAvailable: " + isAvailable + '\n';
     }
 }

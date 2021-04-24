@@ -76,16 +76,4 @@ public class Issue {
         this.status = status;
     }
 
-    @Override
-    public String toString() {
-        return "Issue{" +
-                "id: " + id +
-                ", dateOfIssue: " + dateOfIssue +
-                ", dueDate=" + dueDate +
-                ", returnDate=" + returnDate +
-                ", status='" + status + '\'' +
-                ", book=" + book +
-                ", member=" + member +
-                '}';
-    }
 }

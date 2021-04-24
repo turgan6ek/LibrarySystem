@@ -40,7 +40,14 @@ public class IssueServiceImpl implements IssueService {
         List<Issue> issues = issueRepository.findAll();
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         java.sql.Date date = new java.sql.Date(new java.util.Date().getTime());
-        issues.removeIf(i -> i.getDueDate().before(date));
+        for (Issue issue : issues) {
+            if (issue.getDueDate() != null) {
+                if (issue.getDueDate().before(date) ) {
+                    issues.remove(issue);
+                }
+            }
+
+        }
         return issues;
     }
 
@@ -64,12 +71,13 @@ public class IssueServiceImpl implements IssueService {
         List<Book> books = bookRepository.findByIsAvailableTrue();
         for (Book book: books) {
             for (Issue issue: issues) {
-                if (book.equals(issue.getBook())) {
+                if ( book.getId() == issue.getBook().getId()) {
                     bookService.issueBook(book);
                     LocalDate localDate = LocalDate.now().plusDays(14);
                     issue.setDueDate(java.sql.Date.valueOf(localDate));
                     issue.setStatus("ISSUED");
                     issueRepository.save(issue);
+                    System.out.println("Accepted ID: " + issue.getId());
                 }
             }
         }

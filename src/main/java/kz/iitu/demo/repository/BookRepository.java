@@ -10,7 +10,5 @@ import java.util.List;
 @Repository
 public interface BookRepository extends JpaRepository<Book, Long> {
     List<Book> findByIsAvailableTrue();
-    @Query(value = "SELECT * FROM book where is_available is 1 AND (author LIKE ?1 OR " +
-            "name LIKE ?2 OR description LIKE ?3)", nativeQuery = true)
-    List<Book> findByParameters(String author, String name, String description);
+    List<Book> findByAuthorContainingOrNameContainingOrDescriptionContainingAndIsAvailableTrue(String author, String name, String description);
 }
