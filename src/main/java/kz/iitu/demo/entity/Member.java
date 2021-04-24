@@ -9,6 +9,7 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
     @OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
     private List<Issue> issues;
 
@@ -35,4 +36,5 @@ public class Member {
     public void setIssues(List<Issue> issues) {
         this.issues = issues;
     }
+
 }

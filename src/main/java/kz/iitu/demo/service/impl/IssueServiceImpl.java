@@ -53,7 +53,7 @@ public class IssueServiceImpl implements IssueService {
 
     @Override
     public Issue findByID(Long id) {
-        return issueRepository.getOne(id);
+        return issueRepository.findById(id).get();
     }
 
     @Override

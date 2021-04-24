@@ -1,8 +1,9 @@
 package kz.iitu.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.sql.Date;
-
 @Entity
 public class Issue {
     @Id
@@ -12,9 +13,11 @@ public class Issue {
     private Date dueDate;
     private Date returnDate;
     private String status;
+
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "book_id")
     private Book book;
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Member member;

@@ -12,7 +12,7 @@ public class MemberServiceImpl implements MemberService {
     MemberRepository memberRepository;
     @Override
     public Member getMember(Long id) {
-        return memberRepository.getOne(id);
+        return memberRepository.findById(id).get();
     }
 
     @Override

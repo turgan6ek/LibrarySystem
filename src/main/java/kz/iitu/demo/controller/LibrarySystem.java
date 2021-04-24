@@ -25,7 +25,6 @@ public class LibrarySystem {
     private MemberService memberService;
     Scanner scan = new Scanner(System.in);
     Member member = null;
-    @PostConstruct
     void menu() {
         int choice;
         do {
