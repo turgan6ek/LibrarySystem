@@ -13,7 +13,7 @@ public class Issue {
     private Date dueDate;
     private Date returnDate;
     private String status;
-
+    @JsonIgnore
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "book_id")
     private Book book;
