@@ -1,6 +1,7 @@
 package kz.iitu.demo.service.impl;
 
 import kz.iitu.demo.entity.Member;
+import kz.iitu.demo.entity.Role;
 import kz.iitu.demo.repository.MemberRepository;
 import kz.iitu.demo.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;

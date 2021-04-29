@@ -25,7 +25,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                     antMatchers("/members/issues").hasAuthority("USER").
                     antMatchers("/members").hasAuthority("ADMIN").
                     antMatchers("/issues").hasAuthority("ADMIN").
-                    antMatchers("/members/register").hasAuthority("ADMIN").anyRequest().authenticated().
+                    antMatchers("/members/register").permitAll().
                     and().addFilter(new JwtTokenGeneratorFilter(authenticationManager())).
                     addFilterAfter(new JwtTokenAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
     }

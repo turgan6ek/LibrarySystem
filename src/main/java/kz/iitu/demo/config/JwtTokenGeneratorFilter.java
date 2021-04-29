@@ -37,7 +37,7 @@ public class JwtTokenGeneratorFilter extends UsernamePasswordAuthenticationFilte
             Member creds = new ObjectMapper().readValue(request.getInputStream(), Member.class);
 
             UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
-                    creds.getId().toString(), creds.getPassword(), Collections.emptyList());
+                    creds.getUsername().toString(), creds.getPassword(), Collections.emptyList());
 
             return authManager.authenticate(authToken);
 
